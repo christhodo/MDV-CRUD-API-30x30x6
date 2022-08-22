@@ -2,18 +2,18 @@
   <div class="players-list">
     <mat-card>
       <mat-card-header>
-        <mat-card-title> Player List </mat-card-title>
+        <mat-card-title> Mavericks Roster </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <mat-list>
           <mat-list-item
             *ngFor="let player of players"
             (click)="selected.emit(player)"
+            class="mat-list-item"
           >
             <h3 matLine>{{ player.name | titlecase }}</h3>
-            <p matLine>
-              {{ player.jersey }}
-            </p>
+            <p matLine># {{ player.jersey }}</p>
+            <p matLine>{{ player.rating }} Overall Player Rating</p>
             <button
               mat-icon-button
               color="warn"
