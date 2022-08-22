@@ -1,0 +1,18 @@
+{
+  "players": [
+    {
+      "id": "1",
+      "name": "Luka Doncic",
+      "jersey": "22",
+      "rating": null,
+      "allstar": true
+    },
+    {
+      "id": "2",
+      "name": "Tim Hardaway Jr",
+      "jersey": "11",
+      "rating": null,
+      "allstar": true
+    }
+  ]
+}

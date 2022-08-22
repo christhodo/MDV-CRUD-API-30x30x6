@@ -1,0 +1,17 @@
+<div class="players-containers">
+  <div class="players-list">
+    <mavericks-app-players-list
+      [players]="players$ | async"
+      (selected)="selectPlayer($event)"
+      (deleted)="deletePlayer($event)"
+    >
+    </mavericks-app-players-list>
+  </div>
+  <div class="player-details">
+    <mavericks-app-player-details
+      [player]="selectedPlayer"
+      (cancelled)="reset()"
+      (saved)="savePlayer($event)"
+    ></mavericks-app-player-details>
+  </div>
+</div>

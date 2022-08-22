@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "environment": "libs/environment",
+    "material": "libs/material",
     "mavericks": "apps/mavericks",
     "mavericks-e2e": "apps/mavericks-e2e"
   }

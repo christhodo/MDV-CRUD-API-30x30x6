@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <span *ngIf="currentPlayer?.id; else elseBlock">
+        {{ originalName | titlecase }}
+      </span>
+      <ng-template #elseBlock>Select a Player</ng-template>
+    </mat-card-title>
+  </mat-card-header>
+  <form #form="ngForm" (submit)="saved.emit(currentPlayer)">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Name"
+          [(ngModel)]="currentPlayer.name"
+          name="name"
+          required
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea
+          matInput
+          placeholder="jersey"
+          [(ngModel)]="currentPlayer.jersey"
+          name="jersey"
+          type="text"
+        ></textarea>
+      </mat-form-field>
+      <section class="full-width"></section>
+      <section></section>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        type="submit"
+        [disabled]="form.invalid"
+        mat-button
+        color="primary"
+      >
+        Save
+      </button>
+      <button type="button" mat-button (click)="cancelled.emit()">
+        Cancel
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>
