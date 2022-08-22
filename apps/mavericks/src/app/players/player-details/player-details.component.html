@@ -9,7 +9,8 @@
   </mat-card-header>
   <form #form="ngForm" (submit)="saved.emit(currentPlayer)">
     <mat-card-content>
-      <mat-form-field class="full-width">
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Name</mat-label>
         <input
           matInput
           placeholder="Name"
@@ -19,7 +20,8 @@
           type="text"
         />
       </mat-form-field>
-      <mat-form-field class="full-width">
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Jersey #</mat-label>
         <textarea
           matInput
           placeholder="jersey"
@@ -28,9 +30,25 @@
           type="text"
         ></textarea>
       </mat-form-field>
-      <section class="full-width"></section>
-      <section></section>
+      <section class="full-width" appearance="outline" floatlabel></section>
+      <section class="full-width">
+        <h4>{{ currentPlayer.rating }} Overall Rating</h4>
+        <mat-slider
+          class="full-width"
+          min="0"
+          max="100"
+          thumbLabel
+          name="Rating"
+          [(ngModel)]="currentPlayer.rating"
+        >
+        </mat-slider>
+      </section>
     </mat-card-content>
+    <section>
+      <mat-checkbox [(ngModel)]="currentPlayer.allstar" name="allstar">
+        Allstar
+      </mat-checkbox>
+    </section>
     <mat-card-actions>
       <button
         type="submit"

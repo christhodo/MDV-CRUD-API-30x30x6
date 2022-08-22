@@ -7,11 +7,12 @@ import { PlayersComponent } from './players/players.component';
 import { PlayersListComponent } from './players/players-list/players-list.component';
 import { PlayerDetailsComponent } from './players/player-details/player-details.component';
 import { MaterialModule } from '@mavericks-app/material';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingModule } from './app.routing.module';
 import { EnvironmentModule } from '@mavericks-app/environment';
 import { environment } from '../environments/environment';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { environment } from '../environments/environment';
     PlayersComponent,
     PlayersListComponent,
     PlayerDetailsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { environment } from '../environments/environment';
     FormsModule,
     HttpClientModule,
     RoutingModule,
+    ReactiveFormsModule,
     EnvironmentModule.withEnvironment(environment),
   ],
   providers: [],
